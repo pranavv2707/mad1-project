@@ -1,0 +1,1 @@
+This repository contains the project for Modern Application Development - I (MAD-I) Project (cs2003) for the term -2 of 2026.
