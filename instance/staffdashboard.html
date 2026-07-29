@@ -1,0 +1,64 @@
+{% extends "staff_base.html" %}
+{% block title %} Staff dashboard {%endblock%}
+{%block content%}
+<div class="mt-3">
+    <h1>My Dashboard</h1>
+</div>
+
+<div class="row mt-4">
+    <div class="col-4">
+        <div class="card p-3">
+            <h4>Assigned Tasks</h4>
+            <div class="mt-4">
+                <p> {{treksnum}}</p>
+            </div>
+        </div>
+    </div>
+    <div class="col-4">
+        <div class="card p-3">
+            <h4>Total Participants</h4>
+            <div class="mt-4">
+                <p>{{p}}</p>
+            </div>
+        </div>
+    </div>
+    <div class="col-4">
+        <div class="card p-3">
+            <h4>Open treks</h4>
+            <div class="mt-4">
+                <p>{{treksavail}}</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="row mt-3">
+        <div class="col-12">
+            <div class="card p-3">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>Trek Name</th>
+                            <th>Location</th>
+                            <th>Participants</th>
+                            <th>Slots</th>
+                            <th>Status</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for i in assignedtask %}
+                        <tr>
+                            <td>{{i.name}}</td>
+                            <td>{{i.location}}</td>
+                            <td>{{i.participantsnum}}</td>
+                            <td>{{i.availableslots}}</td>
+                            <td>{{i.status}}</td>
+                            <td><button type="submit" class="btn btn-primary w-50"> Manage</button></td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    {%endblock%}

@@ -1,0 +1,33 @@
+{% extends "user_base.html" %}
+{% block title %}
+User Bookings
+{% endblock %}
+{% block content %}
+<div class="mt-4">
+    <h1>My Bookings</h1>
+</div>
+<div class="card p-3">
+    <div class="col-12">
+        <table class="table">
+            <tr>
+                <th>Trek Name</th>
+                <th>Booking Date</th>
+                <th>Trek Dates</th>
+                <th>Status</th>
+                <th>Action</th>
+            </tr>
+            {% for i in b %}
+            <tr>
+                <td>{{i.name}}</td>
+                <td>{{i.booking_date}}</td>
+                <td>{{i.start_date}}</td>
+                <td>{{i.status}}</td>
+                <td>
+                    <a href="/userviewdetails/{name}" class="btn btn-outline-primary me-2">View Details</a>
+                </td>
+            </tr>
+            {% endfor %}
+        </table>
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,23 @@
+{% extends "login_base.html" %}
+
+{% block title %}
+Legend/Roles
+{% endblock %}
+{% block content %}
+<div class="container d-flex justify-content-center mt-5">
+    <div class="card login-box p-4" style="width: 400px">
+        <div class="mt-3">
+            <h1> Welcome to Trekking Management Application!</h1>
+        </div>
+        <div class="list-group mt-3">
+            <a href="/admindashboard" class="list-group-item list-group-item-action">Admin</a>
+        </div>
+        <div class="list-group mt-3">
+            <a href="/login" class="list-group-item list-group-item-action>Trek ">Staff</a>
+        </div>
+        <div class=" list-group mt-3">
+            <a href="/login" class="list-group-item list-group-item-action">User-Trekker</a>
+        </div>
+    </div>
+</div>
+{% endblock %}

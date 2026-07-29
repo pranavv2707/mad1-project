@@ -1,0 +1,31 @@
+{% extends "user_base.html" %}
+{% block title %}
+User Bookings
+{% endblock %}
+{% block content %}
+<div class="mt-4">
+    <h1>Trekking history</h1>
+</div>
+<div class="card p-3">
+    <div class="col-12">
+        <table class="table">
+            <thead>
+                <th>Trek Name</th>
+                <th>Trek Dates</th>
+                <th>Completed On</th>
+                <th>Status</th>
+            </thead>
+            <tbody>
+                {% for i in h %}
+                <tr>
+                    <td>{{i.name}}</td>
+                    <td>{{i.date}}</td>
+                    <td>None</td>
+                    <td>{{i.status}}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,68 @@
+{% extends "admin_base.html" %}
+{% block title %}
+Admin - manage staff
+{% endblock %}
+{% block content %}
+<div class="mt-3">
+    <h1> Staff Requests</h1>
+</div>
+<form method="GET" class="mt-4">
+    <input type="hidden" name="status" value="{{status}}">
+    <input type="text" class="form-control" name="search" placeholder="Search staff.." value="{{search}}">
+</form>
+<div class="row mt-3">
+    <div class="col-3">
+        <div class="card mt-3">
+            <a href="/adminmanagestaff?status=Pending" class="btn btn-outline-primary">
+                <h4>Pending</h4>
+            </a>
+        </div>
+    </div>
+    <div class="col-3">
+        <div class="card mt-3">
+            <a href="/adminmanagestaff?status=Approved" class="btn btn-outline-primary">
+                <h4>Approved</h4>
+            </a>
+        </div>
+    </div>
+    <div class="col-3">
+        <div class="card mt-3">
+            <a href="/adminmanagestaff?status=Blacklisted" class="btn btn-outline-primary">
+                <h4>Blacklisted</h4>
+            </a>
+        </div>
+    </div>
+</div>
+<div class="col-11">
+    <div class="card mt-4">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Staff</th>
+                    <th>Name</th>
+                    <th>Email</th>
+                    <th>Contact</th>
+                    <th>Status</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for i in s %}
+                <tr>
+                    <td>{{i.id}}</td>
+                    <td>{{i.name}}</td>
+                    <td>{{i.email}}</td>
+                    <td>{{i.contact}}</td>
+                    <td>{{i.status}}</td>
+                    <td>
+                        <a href="/adminmanagestaff/approve/{{i.id}}" class="btn btn-success btn-sm">Approve</a>
+                        <a href="/adminmanagestaff/reject/{{i.id}}" class="btn btn-danger btn-sm">Blacklist</a>
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</div>
+
+{% endblock %}

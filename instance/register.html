@@ -1,0 +1,48 @@
+{% extends "login_base.html" %}
+
+{% block title %}
+Login
+{% endblock %}
+{% block content %}
+<div class="container d-flex justify-content-center mt-5">
+    <div class="card login-box p-4" style="width: 400px">
+        <form method="POST">
+            <div class="d-flex justify-content-center mb-3">
+                <h1> REGISTER </h1>
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Full Name</label>
+                <input type="text" class="form-control" placeholder="Full Name" name="name">
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Email</label>
+                <input type="email" class="form-control" placeholder="Email" name="email">
+            </div>
+            <div class="mt-3">
+                <label class="form-label">Password</label>
+                <input type="password" class="form-control" placeholder="Password" name="password">
+            </div>
+            <div class="mt-3">
+                <label class="form-label">Confirm Password</label>
+                <input type="password" class="form-control" placeholder="Confirm Password" name="confirmpassword">
+            </div>
+            <div class="mt-3">
+                <label class="form-label">I am a</label>
+                <select class="form-select" name="role">
+                    <option selected disabled>-- Select Role --</option>
+                    <option value="staff">Trek Staff</option>
+                    <option value="user">User (Trekker)</option>
+                </select>
+            </div>
+            <div class="mt-4">
+                <button type="submit" class="btn btn-primary w-100">Register</button>
+            </div>
+        </form>
+        <div class="mt-3">
+            <p>
+                Already have an account? <a href="/login">Login here!</a>
+            </p>
+        </div>
+    </div>
+</div>
+{% endblock %}
